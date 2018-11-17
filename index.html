@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="shortcut icon" type="image/png" href="images/logo.png"/>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,700i" rel="stylesheet">
+    <link rel="stylesheet" href="styles/main.css">
+    <title>Auto Liising</title>
+</head>
+<body>
+<main class="main">
+    <!-- Landing Page -->
+    <section class="section section__landing">
+        <div class="offer">
+            <article class="landing__benefits">
+                <h1>Autoliising ja autolaen</h1>
+                <h3> Autoostule roheline tuli!</h3>
+                <hr>
+                <div>
+                    <ul class="benefits-list">
+                        <li class="benefits__li">Tasuta autoabi, kui oled autoga teele jäänud öösel või päeval, Eestis
+                            või mujal Euroopas.
+                        </li>
+                        <li class="benefits__li">Kindlustame autoklaasid omavastutuseta.</li>
+                        <li class="benefits__li">
+                            Kiire kahju käsitlemine. Hüvitamisotsuse teeme keskmiselt 3 tööpäeva jooksul.
+                        </li>
+                        <li class="benefits__li">
+                            Kuni 5-aastastele autodele garanteerime remondi korral originaalvaruosad.
+                        </li>
+                    </ul>
+
+                </div>
+                <div class="buttons-block button__landing">
+                    <a role='button' class="button__landing button">Asu taotlust täitma</a>
+                </div>
+            </article>
+        </div>
+
+    </section>
+    <!--Progress Bar-->
+    <section class="form frame progressBar mg-b-3">
+        <!--Line to show the progress-->
+        <div class="wrapper">
+            <div id="myProgress">
+                <div id="myBar"></div>
+            </div>
+        </div>
+        <ol class="form-steps">
+            <li class="page page__1">Automark</li>
+            <li class="page page__2">Nimi</li>
+            <li class="page page__3">Täiendavad andmed</li>
+            <li class="page page__4">Kasko</li>
+            <li class="page page__5">Tagasiside</li>
+        </ol>
+    </section>
+    <!--Error Messages-->
+    <div class="errorMsg">
+        <span class='errorMsg__x'>&xotime;</span>
+        <p class='errorMsg__message'></p>
+    </div>
+    <!-- First Question -->
+    <section class="frame section section__one">
+        <div class='options'>
+            <h3 for="number">Mis marki auto Teil on?</h3>
+            <select required id='select_car'>
+                <option value="Volvo">Volvo</option>
+                <option value="Saab">Saab</option>
+                <option value="Mercedes-Benz">Mercedes-Benz</option>
+                <option value="Audi">Audi</option>
+                <option value="Tesla">Tesla</option>
+                <option value="Ferrari">Ferrari</option>
+                <option value="Porsche">Porsche</option>
+                <option value="Volkswagen">Volkswagen</option>
+                <option value="Nissan">Nissan</option>
+                <option value="Hyundai">Hyundai</option>
+                <option value="Ford">Ford</option>
+                <option value="Honda">Honda</option>
+                <option value="BMW">BMW</option>
+                <option value="Toyota">Toyota</option>
+            </select>
+        </div>
+        <div class="form-button-bar button__landing">
+            <a class="btn__question-previous1 button button__back" role='button'>Eelmine</a>
+            <a class="btn__question-next1  button button__next" role='button'>Järgmine</a>
+        </div>
+    </section>
+    <!-- Second Question starts here. -->
+    <section class="frame section section__two">
+        <h1>Teie ees- ja perekonnanimi</h1>
+        <label for="input-address" class='section__two-fullName'>Teie täisnimi</label>
+        <div class='tooltip'>?
+            <span class='tooltip__text' role="tooltip" data-help-text="Sisesta enda nimi">
+                    Palun sisesta ees- ja perekonnanimi.
+                </span>
+        </div>
+        <input class="form-field-long fullName" type="text" name="address" id="input-address"/>
+        <div class="form-button-bar button__landing">
+            <a class="btn__question-previous2 button button__back" role='button'>Eelmine</a>
+            <a class="btn__question-next2 button__landing button button__next" role='button'>Järgmine</a>
+        </div>
+    </section>
+    <!-- Section Three starts here -->
+    <section class="frame section section__three">
+        <h1>Palun vastake järgnevale</h1>
+        <label class='labelCheck labelCheck1'>Mul on olnud juhiload rohkem kui kaks aastat
+            <input type="checkbox"/>
+            <span class='checkmark'></span>
+        </label>
+        <label class='labelCheck labelCheck2'>Olen Swedbanki klient
+            <input type="checkbox"/>
+            <span class='checkmark'></span>
+        </label>
+
+        <div class="form-button-bar button__landing">
+            <a role="button" class="btn__question-previous3 button button__back" href="#">Eelmine</a>
+            <a class="btn__question-next3 button__landing button button__next" href="#">Järgmine</a>
+        </div>
+    </section>
+    <!-- Section Four starts here -->
+    <section class="frame section section__four">
+        <h1>Kas Te sooviksite autole ka kaskot?</h1>
+        <label class='labelRadio labelRadio1'>Jah
+            <input type='radio' name="radio">
+            <span class="radioSpan"></span>
+        </label>
+
+        <label class='labelRadio labelRadio2'>Ei
+            <input type='radio' name="radio">
+            <span class="radioSpan"></span>
+        </label>
+
+        <div class="form-button-bar button__landing">
+            <a class="btn__question-previous4 button button__landing button__back" href="#">Eelmine</a>
+            <a class="btn__question-next4 button button__next" href="#">Järgmine</a>
+        </div>
+    </section>
+    <!-- Section Five starts here -->
+    <section class="frame section section__five">
+        <h1>Kommentaarid ja tagaside</h1>
+        <textarea name='comments' id='feedback' cols='100' rows='10' maxlength="2000" required
+                  placeholder='Palun vastake paari lausega, kuidas saaksime teenust parandada.'></textarea>
+        <div class="form-button-bar button__landing">
+            <a class="btn__question-previous5 button button__back" href="#">Eelmine</a>
+            <a class="btn__question-next5 button button__next" href="#">Järgmine</a>
+
+        </div>
+    </section>
+    <!-- Review Section starts here -->
+    <section class="frame section review review__details">
+        <div class='review__asnwers'>
+            <h1>Palun vaadake oma andmed üle</h1>
+            <hr>
+            <div class='review__answer review__answer-one'>
+                <h6>Automark: </h6>
+                <p class='reviewCarType'></p>
+            </div>
+            <div class='review__answer review__answer-two'>
+                <h6>Teie nimi: </h6>
+                <p class="reviewName"></p>
+            </div>
+            <div class='review__answer review__answer-three'>
+                <h6 class='mg-b-3'>Täiendavad Andmed:</h6>
+                <label class='labelCheck review__labelCheck1'>Mul on olnud juhiload rohkem kui kaks aastat
+                    <input type="checkbox"/>
+                    <span class='checkmark'></span>
+                </label>
+                <label class='labelCheck review__labelCheck2'>Olen Swedbanki klient
+                    <input type="checkbox"/>
+                    <span class='checkmark'></span>
+                </label>
+            </div>
+            <div class='review__answer review__answer-four'>
+                <h6 class='mg-b-3'>Kas Te sooviksite oma autole kaskot?</h6>
+                <label class='labelRadio review__labelRadio1'>Jah
+                    <input type='radio' name="radio">
+                    <span class="radioSpan"></span>
+                </label>
+
+                <label class='labelRadio review__labelRadio2'>Ei
+                    <input type='radio' name="radio">
+                    <span class="radioSpan"></span>
+                </label>
+            </div>
+            <div class='review__answer review__answer-five'>
+                <h6 class='mg-b-3'>Kommentaarid ja tagasiside</h6>
+                <p class='reviewFeedback mg-b-3'></p>
+            </div>
+        </div>
+        <div class="form-button-bar button__landing">
+            <a class="btn__question-previous6 button button__back" role='button'>Tagasi</a>
+            <a class="btn__question-send button success" role='button'>Saada</a>
+        </div>
+    </section>
+    <!-- Thank you section. -->
+    <section class="section section__thanks">
+        <div class="frame">
+            <h1>Suur aitäh vastamast!</h1>
+            <hr>
+            <h3>Võtame teiega ühendust esimesel võimalusel!</h3>
+        </div>
+    </section>
+</main>
+
+<script src="js/main.js"></script>
+</body>
+</html>

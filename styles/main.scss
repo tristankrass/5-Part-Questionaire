@@ -1,0 +1,651 @@
+// Colors
+$color-primary: #ee7023;
+$color-secondary: #f35b1c;
+$color-background: #fbf2ea;
+$color-back: #d4b8a3;
+$color-brown: #512b2b;
+$color-red: #e2898d;
+$color-red-apple: #c5131c;
+$color-red-back: #f9ded3;
+$color-offer: #ebf8f2;
+$color-green: #99cc66;
+$color-green-dark: #51971b;
+$color-blueish: #8acdc3;
+$color-yellow: #fdc129;
+$color-silver: #898989;
+$color-beige: #dec7b6;
+$color-button-white: #f8f8f8;
+
+// BREAKPOINTS
+@mixin breakpoint($point) {
+  @if $point == laptop {
+    @media (min-width: 64em) {
+      @content;
+    }
+  } @else if $point == tablet {
+    @media (min-width: 50em) {
+      @content;
+    }
+  } @else if $point == phablet {
+    @media (min-width: 37.5em) {
+      @content;
+    }
+  } @else if $point == mobileonly {
+    @media (max-width: 37.5em) {
+      @content;
+    }
+  }
+}
+
+// Typography
+html, body {
+  font-size: 62.5%; // Make 1px to 0.1rem
+
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  background: $color-background;
+}
+
+label {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 700;
+}
+
+h1 {
+  font-size: 5rem;
+  color: $color-primary;
+  @include breakpoint('tablet') {
+    font-size: 4rem;
+  }
+  @include breakpoint('mobileonly') {
+    font-size: 2rem;
+  }
+}
+
+p.errorMsg__message {
+  font-size: 1.2rem;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+  color: black;
+  padding-left: 2rem;
+  display: inline-block;
+
+}
+
+.reviewFeedback {
+  font-size: 1.4rem;
+  font-weight: 400;
+  line-height: 2rem;
+  font-family: "Open Sans", sans-serif;
+  color: $color-brown;
+
+}
+
+.reviewCarType, .reviewName {
+  font-size: 1.5rem;
+  margin: 0 0 0 2rem;
+  font-weight: 700;
+  color: $color-brown;
+}
+
+h3 {
+  font-size: 3rem;
+  color: $color-secondary;
+  @include breakpoint('tablet') {
+    font-size: 2.2rem;
+  }
+  @include breakpoint('mobileonly') {
+    font-size: 1.7rem;
+  }
+}
+
+h6 {
+  margin: 0;
+  font-size: 1.7rem;
+  color: $color-brown;
+  @include breakpoint('tablet') {
+    font-size: 1.5rem;
+  }
+  @include breakpoint('mobileonly') {
+    font-size: 1.3rem;
+  }
+}
+
+.input-address {
+  font-size: 1.2rem;
+  display: inline-block;
+}
+
+.benefits-list {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.benefits__li {
+  position: relative;
+  line-height: 3rem;
+  padding-left: 2rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-decoration: none;
+  color: $color-brown;
+  @include breakpoint('tablet') {
+    font-size: 1.3rem;
+    line-height: 2.5rem;
+  }
+  @include breakpoint('mobileonly') {
+    font-size: 1.2rem;
+    line-height: 2rem;
+    margin-bottom: .2rem;
+  }
+
+  &:before {
+    content: '\25CF';
+    width: 1rem;
+    height: 1rem;
+    position: absolute;
+    color: #ff6100;
+    left: 0
+  }
+}
+
+// Elements
+.wrapper {
+  margin-left: 13%;
+  width: 73vw;
+
+  #myProgress {
+    width: 100%;
+    background-color: $color-background;
+  }
+
+  #myBar {
+    width: .3rem;
+    height: .3rem;
+    background-color: $color-green-dark;
+  }
+}
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+  font-size: 1rem;
+  color: $color-brown;
+  background-color: $color-background;
+  border-radius: 500rem;
+  padding: 1rem;
+  margin: 0 2rem;
+  cursor: pointer;
+  &:hover {
+    background: $color-yellow;
+
+    .tooltip__text {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+
+  &__text {
+    left: 1rem;
+    top: 4rem;
+    visibility: hidden;
+    background-color: $color-background;
+    color: $color-brown;
+    text-align: center;
+    border-radius: .5rem;
+    padding: .5rem 0;
+    position: absolute;
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 0.3s;
+
+  }
+}
+
+.section__two-fullName {
+  font-size: 1.4rem;
+}
+
+input.fullName {
+  height: 2.5rem;
+  width: 25rem;
+  font-size: 1.5rem;
+  border: 1px solid $color-blueish;
+  border-radius: .3rem;
+  margin-bottom: 10rem;
+
+  @include breakpoint('mobileonly') {
+    width: 80vw;
+  }
+}
+
+.button {
+  border-radius: .4rem;
+  font-size: 1.5rem;
+  font-weight: 400;
+  font-family: "Open Sans", sans-serif;
+  margin-top: 1rem;
+  padding: 1rem 2rem;
+  margin-bottom: 0;
+  color: #ffffff;
+  background: none $color-primary;
+  border: 1px solid $color-primary;
+  text-decoration: none;
+  cursor: pointer;
+
+  &__next {
+    &:after {
+      content: "\2009\00bb";;
+    }
+  }
+  @include breakpoint('mobileonly') {
+    padding: 1rem 1.4rem;
+  }
+  &:hover {
+    background: none $color-secondary;
+    border: 1px solid $color-secondary;
+  }
+
+  &__back {
+    color: $color-brown;
+    background: $color-back;
+    border: $color-back;
+    &:hover {
+      background-color: #dec7b6;
+      color: #898989;
+      border: $color-back;
+    }
+    &:before {
+      content: "\00ab\2009";
+    }
+  }
+}
+
+.success {
+  background: $color-green;
+  border: 1px solid $color-green;
+  &:hover {
+    background: $color-green-dark;
+    border: 1px solid $color-green-dark;
+  }
+}
+
+#checkmarkNormal {
+  background: $color-primary;
+}
+
+#select_car {
+  width: 25rem;
+  background: $color-offer;
+  font-size: 1.5rem;
+  margin: 4rem;
+  border: 1px solid $color-blueish;
+  height: 5rem;
+  border-radius: 1px;
+
+  @include breakpoint('mobileonly') {
+    width: 80vw;
+    height: 3rem;
+  }
+}
+
+// Radio CheckBox logic
+.labelCheck {
+  display: block;
+  position: relative;
+  padding-left: 3.5rem;
+  margin-bottom: 1rem;
+  cursor: pointer;
+  font-size: 1.3rem;
+  font-weight: 700;
+  font-family: "Open Sans", sans-serif;
+  color: $color-brown;
+  user-select: none;
+
+  input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+
+  &:hover {
+    input ~ .checkmark {
+      background-color: $color-yellow;
+      border: 1px solid $color-yellow;
+    }
+  }
+  input:checked ~ .checkmark {
+    background: $color-primary;
+
+    &:after {
+      display: block;
+    }
+  }
+  .checkmark:after {
+    left: .7rem;
+    top: .4rem;
+    width: .5rem;
+    height: 1rem;
+    border: solid white;
+    border-width: 0 0.25rem 0.25rem 0;
+    transform: rotate(45deg);
+  }
+}
+
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 2rem;
+  width: 2rem;
+  background-color: #ffffff;
+  border-radius: .2rem;
+  border: 2px solid $color-offer;
+
+  &:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+}
+
+.labelCheck2 {
+  margin-bottom: 5rem;
+}
+
+.labelRadio.labelRadio2 {
+  margin-bottom: 5rem;
+}
+
+// Radio Button Logic comes here
+.labelRadio {
+  display: block;
+  position: relative;
+  padding-left: 3.5rem;
+  margin-bottom: 1.2rem;
+  cursor: pointer;
+  font-size: 1.3rem;
+  font-weight: 700;
+  font-family: "Open Sans", sans-serif;
+  color: $color-brown;
+  user-select: none;
+  input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+
+    &:checked ~ .radioSpan {
+      background-color: $color-primary;
+    }
+  }
+}
+
+.radioSpan {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 2.5rem;
+  width: 2.5rem;
+  background-color: $color-beige;
+  border-radius: 50%;
+  &:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+}
+
+// Layout
+.review__answer {
+  margin-top: 5rem;
+
+  &-one, &-two {
+    display: flex;
+  }
+}
+
+.options {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.offer {
+  background: $color-offer;
+  display: flex;
+}
+
+.frame {
+  background: #ffffff;
+  padding: 2rem;
+  margin: 1rem 0 0;
+  border-radius: 0.3rem;
+  position: relative;
+  z-index: 1;
+  @include breakpoint('tablet') {
+    padding: 1.5rem;
+  }
+  @include breakpoint('mobileonly') {
+    padding: 1rem;
+  }
+}
+
+.form-button-bar {
+  display: flex;
+  padding: 1rem;
+  justify-content: space-between;
+  margin-top: 0;
+  background: $color-button-white;
+  border-radius: 0 0 3px 3px;
+
+}
+
+.buttons-block {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.main {
+  padding: 5rem;
+  @include breakpoint('tablet') {
+    padding: 3rem;
+  }
+  @include breakpoint('mobileonly') {
+    padding: 1rem;
+  }
+}
+
+.offer__image {
+  height: 100%;
+  width: 18rem;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.landing__benefits {
+  width: 100%;
+  padding: 1rem;
+}
+
+// Individual sections for questions.
+.section {
+
+  &__landing {
+    //display: none;
+    background: white;
+  }
+  &__one {
+    display: none;
+    margin: auto;
+  }
+  &__two {
+    display: none;
+  }
+  &__three {
+    display: none;
+  }
+  &__four {
+    display: none;
+  }
+  &__five {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-content: space-around;
+    display: none;
+
+    textarea {
+      margin-bottom: 5rem;
+      border: 1px solid $color-blueish;
+      font-size: 1.4rem;
+      &::placeholder {
+        font-size: 1.4rem;
+      }
+      @include breakpoint('mobileonly') {
+        width: 80vw;
+      }
+    }
+  }
+  &__thanks {
+    display: none;
+  }
+}
+
+.review__details {
+  display: none;
+}
+
+.form-steps {
+  display: flex;
+  justify-content: space-around;
+}
+
+.page {
+  list-style-type: none;
+  padding: 1.5rem 0 0 3rem;
+  position: relative;
+  cursor: pointer;
+  font-size: 1.5rem;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+  color: $color-brown;
+
+  &:after {
+    border-radius: 5rem;
+    background-color: $color-beige;
+    content: "";
+    font-size: 2rem;
+    display: block;
+    width: 3rem;
+    height: 3rem;
+    position: absolute;
+    top: -2.4rem;
+    left: 50%;
+    text-align: center;
+    color: #ffffff;
+  }
+
+  &__1 {
+    &:after {
+      content: "1";
+    }
+  }
+
+  &__2 {
+    &:after {
+      content: "2";
+    }
+  }
+
+  &__3 {
+    &:after {
+      content: "3";
+    }
+  }
+  &__4 {
+    &:after {
+      content: "4";
+    }
+  }
+  &__5 {
+    &:after {
+      content: "5";
+    }
+  }
+}
+
+// Classes to call with javaScript
+.passed {
+
+  &:after {
+    background: $color-green;
+    border-color: $color-green;
+    content: "\2713";
+  }
+}
+
+.active {
+  &:after {
+    background: $color-yellow;
+    border: 1px solid $color-yellow;
+  }
+}
+
+.progressBar {
+  display: none;
+}
+
+.mg-b-3 {
+  margin-bottom: 3rem;
+}
+
+.fillable-row {
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+
+.show {
+  display: block;
+}
+
+.hide {
+  display: none;
+}
+
+.figure {
+  &__car {
+  }
+}
+
+// Error Messages and Error feedback
+.errorMsg {
+  display: none;
+  margin-top: 1.5rem;
+  border: 1px solid $color-red;
+  padding-top: .2rem;
+  padding-bottom: .2rem;
+  background-color: $color-red-back;
+
+  @include breakpoint('mobileonly') {
+    width: 80vw;
+  }
+  &__x {
+    display: inline-block;
+    color: $color-red-apple;
+    font-size: 3rem;
+    padding-left: 2rem;
+  }
+}
+
+.redBorder {
+  border-color: $color-red-apple !important;
+}
+
+
