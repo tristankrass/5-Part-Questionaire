@@ -19,19 +19,27 @@ $color-button-white: #f8f8f8;
 // BREAKPOINTS
 @mixin breakpoint($point) {
   @if $point == laptop {
-    @media (min-width: 64em) {
+    @media (max-width: 64em) {
       @content;
     }
   } @else if $point == tablet {
-    @media (min-width: 50em) {
+    @media (max-width: 50em) {
       @content;
     }
   } @else if $point == phablet {
-    @media (min-width: 37.5em) {
+    @media (max-width: 37.5em) {
       @content;
     }
   } @else if $point == mobileonly {
     @media (max-width: 37.5em) {
+      @content;
+    }
+  } @else if $point == wideScreen {
+    @media (max-width: 85em) {
+      @content;
+    }
+  } @else if $point == maxWideScreen {
+    @media (max-width: 100em) {
       @content;
     }
   }
@@ -156,9 +164,40 @@ h6 {
   margin-left: 13%;
   width: 73vw;
 
+  @include breakpoint('phablet') {
+    width: 72vw;
+  }
+  @include breakpoint('laptop') {
+      width: 75vw;
+  }
+
   #myProgress {
-    width: 100%;
+    width: 98%;
     background-color: $color-background;
+     @include breakpoint('maxWideScreen') {
+      width: 95%;
+      margin-left: 1.5rem;
+    }
+     @include breakpoint('wideScreen') {
+      width: 92%;
+      margin-left: 1.5rem;
+    }
+     @include breakpoint('laptop') {
+      width: 86%;
+      margin-left: 1.5rem;
+    }
+    @include breakpoint('tablet') {
+      width: 83%;
+      margin-left: 4rem;
+    }
+    @include breakpoint('phablet') {
+      width: 87%;
+      margin-left: 2rem;
+    }
+     @include breakpoint('mobileonly') {
+      width: 87%;
+      margin-left: 4rem;
+    }
   }
 
   #myBar {
@@ -174,9 +213,9 @@ h6 {
   font-size: 1rem;
   color: $color-brown;
   background-color: $color-background;
-  border-radius: 500rem;
+  border-radius: 100rem;
   padding: 1rem;
-  margin: 0 2rem;
+  margin: 2 4rem;
   cursor: pointer;
   &:hover {
     background: $color-yellow;
